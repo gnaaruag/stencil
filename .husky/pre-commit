@@ -1,0 +1,4 @@
+npx lint-staged
+cd packages/common
+npm run test
+cd ../..

@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Stencil - An opinionated backend framework for NodeJS based on NestJS",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,17 @@
   "devDependencies": {
     "eslint": "^8.57.0",
     "husky": "^9.0.11",
+    "lint-staged": "^15.2.7",
     "prettier": "^3.2.5"
+  },
+  "lint-staged": {
+    "packages/common/**/*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "sample/**/**/*.{js,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ]
   }
 }
